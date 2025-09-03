@@ -1,0 +1,75 @@
+
+# Configuration for RedBus Demand Forecasting
+
+data:
+  train_path: "data/raw/train.csv"
+  test_path: "data/raw/test.csv" 
+  transactions_path: "data/raw/transactions.csv"
+  processed_path: "data/processed/"
+  models_path: "data/models/"
+
+features:
+  temporal:
+    - year
+    - month
+    - day
+    - dayofweek
+    - dayofyear
+    - week
+    - quarter
+    - is_weekend
+    - is_month_start
+    - is_month_end
+
+  holiday:
+    - is_holiday
+    - days_to_holiday
+    - wedding_season
+    - exam_season
+    - festival_season
+
+  route:
+    - tier_combination
+    - region_combination
+    - same_tier
+    - same_region
+
+  booking_pattern:
+    - cumsum_seatcount_day15
+    - cumsum_searchcount_day15
+    - conversion_rate_day15
+    - booking_velocity_mean
+    - booking_velocity_std
+    - early_booking_seats
+
+models:
+  xgboost:
+    n_estimators: 5000
+    max_depth: 10
+    learning_rate: 0.1
+    subsample: 0.9
+    colsample_bytree: 0.5
+    random_state: 42
+
+  lightgbm:
+    n_estimators: 5000
+    max_depth: 5
+    learning_rate: 0.01
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    verbosity: -1
+
+ensemble:
+  weights:
+    xgb: 0.6
+    lgb: 0.4
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+validation:
+  test_size: 0.2
+  cv_folds: 5
+  random_state: 42
