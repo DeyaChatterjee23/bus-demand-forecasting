@@ -1,40 +1,40 @@
 # Core ML Libraries
-pandas>=1.5.0,<2.0.0
-numpy>=1.21.0,<2.0.0
-scikit-learn>=1.0.0,<2.0.0
-xgboost>=1.6.0,<2.0.0
-lightgbm>=3.3.0,<4.0.0
+pandas
+numpy
+scikit-learn
+xgboost
+lightgbm
 
 # Date and Time
-holidays>=0.18
-python-dateutil>=2.8.0
+holidays
+python-dateutil
 
 # Streamlit and Web Framework
-streamlit>=1.28.0,<2.0.0
-plotly>=5.0.0,<6.0.0
-altair>=4.0.0,<6.0.0
+streamlit
+plotly
+altair
 
 # Configuration and Utilities
-pyyaml>=6.0
-click>=8.0.0
-tqdm>=4.64.0
-joblib>=1.0.0
+pyyaml
+click
+tqdm
+joblib
 
 # Data Validation
-pydantic>=1.9.0,<2.0.0
+pydantic
 
 # Testing
-pytest>=7.0.0
-pytest-cov>=4.0.0
+pytest
+pytest-cov
 
 # Code Quality
-black>=22.0.0
-flake8>=5.0.0
-isort>=5.10.0
+black
+flake8
+isort
 
 # Docker and Deployment
-gunicorn>=20.0.0
+gunicorn
 
 # Development
-jupyter>=1.0.0
-ipywidgets>=8.0.0
+jupyter
+ipywidgets
